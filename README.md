@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+recoil, query 세팅하기
 
-## Getting Started
+유틸 파일에 atoms 설정
 
-First, run the development server:
+타입 지정하기 제네릭 타입 조합하기
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+.env로 baseurl 설정
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+api.ts
+endsWith() 특정 문자열로 끝나는지 확인
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+new URL() 쿼리파라미터 제어용으로만 썼는데 뭔가 더 있는듯
 
-## Learn More
+const url = new URL(path.replace(/^\//, ""), base);
+(/^\//, "") << 맨 앞의 슬래시 제거해서 문자열 앞에 / 하나만 존재하게 만들기
 
-To learn more about Next.js, take a look at the following resources:
+Object.entries() 객체를 key value 형태의 배열로 바꿔줌
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+async와 Promise, await이란
+비동기 프로그래밍인데 작업이 끝나기 전에 기다리는게 아니라 다른 코드를 실행 또는 기다리는 동안 로딩 UI를 보여주려고
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+await는 결과 나오기 전까지 async 함수 내부 실행을 그 줄에서 기다렸다가 결과 나오면 결과를 반환한다
 
-## Deploy on Vercel
+Promise는 미래에 결과가 들어올 상자다
+상태는 진행 중(pending), 성공(fulfilled), 실패(rejected)로 나뉘고
+지금 당장은 결과가 없어도 then이나 await을 통해 결과를 받을 위치를 지정해둘 수 있다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+async function은 택배 주문처럼 Promise(결과 상자)를 생성하고,
+await은 그 택배가 도착할 때까지 해당 지점에서 기다렸다가 상자를 여는 역할이다. Promise는 도착하지 않은 미래의 결과를 표현하는 상자다.

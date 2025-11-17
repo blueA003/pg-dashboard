@@ -14,6 +14,8 @@
     "next": "14.2.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^5.5.0",
+    "recharts": "^3.4.1",
     "recoil": "^0.7.7"
   },
   "devDependencies": {
@@ -27,4 +29,3 @@
     "typescript": "^5.0.0"
   }
 }
-
