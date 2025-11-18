@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import type { Payment } from "@/lib/types/payment";
-import { Num, Date, Badge } from "./Utils";
+import { Num, ReDate, Badge } from "./Utils";
 
 type Props = { payments: Payment[] };
 
@@ -27,7 +27,7 @@ export function Tables({ payments }: Props) {
           최근 거래 10건
         </div>
         <table className="w-full text-left text-xs ">
-          <thead className="border-b border-slate-800 text-[11px] uppercase">
+          <thead className="border-b border-slate-300 text-[11px] uppercase">
             <tr>
               <th className="py-1 pr-2">시간</th>
               <th className="py-1 pr-2">가맹점</th>
@@ -40,9 +40,9 @@ export function Tables({ payments }: Props) {
             {last10.map((p) => (
               <tr
                 key={p.paymentCode}
-                className="border-b border-slate-800"
+                className="border-b border-slate-300"
               >
-                <td className="py-1 pr-2">{Date(p.paymentAt)}</td>
+                <td className="py-1 pr-2">{ReDate(p.paymentAt)}</td>
                 <td className="py-1 pr-2">{p.mchtCode}</td>
                 <td className="py-1 pr-2">
                   {p.currency} {Num(Number(p.amount))}
@@ -62,7 +62,7 @@ export function Tables({ payments }: Props) {
           최근 실패/취소 10건
         </div>
         <table className="w-full text-left text-xs ">
-          <thead className="border-b border-slate-800 text-[11px] uppercase ">
+          <thead className="border-b border-slate-300 text-[11px] uppercase ">
             <tr>
               <th className="py-1 pr-2">시간</th>
               <th className="py-1 pr-2">가맹점</th>
@@ -74,9 +74,9 @@ export function Tables({ payments }: Props) {
             {last5FailCancel.map((p) => (
               <tr
                 key={p.paymentCode}
-                className="border-b border-slate-800"
+                className="border-b border-slate-300"
               >
-                <td className="py-1 pr-2">{Date(p.paymentAt)}</td>
+                <td className="py-1 pr-2">{ReDate(p.paymentAt)}</td>
                 <td className="py-1 pr-2">{p.mchtCode}</td>
                 <td className="py-1 pr-2">
                   {p.currency} {Num(Number(p.amount))}

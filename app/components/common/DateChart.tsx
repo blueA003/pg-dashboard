@@ -20,9 +20,11 @@ export function DateChart({ payments }: Props) {
     const map: Record<string, { amount: number; count: number }> = {};
 
     payments.forEach((p) => {
-      const date = p.paymentAt.slice(0, 10); // YYYY-MM-DD
+      const date = p.paymentAt.slice(0, 10);
       const amount = Number(p.amount) || 0;
+
       if (!map[date]) map[date] = { amount: 0, count: 0 };
+
       map[date].amount += amount;
       map[date].count += 1;
     });
@@ -34,30 +36,41 @@ export function DateChart({ payments }: Props) {
 
   return (
     <div className="flex-2 d-bg">
-      <div className="h-title">
-        날짜별 거래 금액 / 건수
-      </div>
+      <div className="h-title">날짜별 거래 금액 / 건수</div>
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
-            <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-            <YAxis
-              yAxisId="left"
-              tick={{ fontSize: 10 }}
+            <CartesianGrid strokeDasharray="3 3" stroke="#CBD5E1" />
+
+            <XAxis
+              dataKey="date"
+              stroke="#CBD5E1" 
+              tick={{ fontSize: 10, fill: "#CBD5E1" }}
             />
+
+            <YAxis
+              stroke="#CBD5E1" 
+              yAxisId="left"
+              tick={{ fontSize: 10, fill: "#CBD5E1" }}
+            />
+
             <YAxis
               yAxisId="right"
               orientation="right"
-              tick={{ fontSize: 10}}
+              tick={{ fontSize: 10, fill: "#CBD5E1" }}
             />
+
             <Tooltip
+              wrapperStyle={{ color: "#CBD5E1" }}
               contentStyle={{
                 borderColor: "#1e293b",
                 borderRadius: 8,
+                backgroundColor: "#1E293B80",
               }}
             />
-            <Legend />
+
+            <Legend wrapperStyle={{ color: "#CBD5E1" }} />
+
             <Line
               yAxisId="left"
               type="monotone"
@@ -66,6 +79,7 @@ export function DateChart({ payments }: Props) {
               stroke="#22c55e"
               dot={false}
             />
+
             <Line
               yAxisId="right"
               type="monotone"

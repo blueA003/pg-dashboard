@@ -38,7 +38,7 @@ export function Cards({ payments }: Props) {
   }, [payments]);
 
   return (
-    <div className="flex-1 d-bg">
+    <div className="flex-1 d-bg ">
       <h2 className="h-title">요약 정보</h2>
 
       <ul className="space-y-3 text-base ">

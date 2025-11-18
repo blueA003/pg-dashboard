@@ -39,29 +39,34 @@ export function CountChart({ payments }: Props) {
             data={data}
             margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#CBD5E1" />
             <XAxis
               dataKey="mchtCode"
-              tick={{ fontSize: 10 }}
+              tick={{ fontSize: 10, fill: "#CBD5E1"}}
               height={40}
               tickFormatter={(v) => String(v).replace("MCHT-", "")}
               interval={0}
               angle={-30}
               textAnchor="end"
+              
             />
              <YAxis
-              tick={{ fontSize: 10 }}
+              tick={{ fontSize: 10, fill: "#CBD5E1"}}
               width={30}
+              stroke="#CBD5E1" 
             />
             <Tooltip
+              cursor={{ fill: "transparent" }}
               contentStyle={{
                 borderColor: "#1e293b",
                 borderRadius: 8,
+                backgroundColor:"#1E293B80",
               }}
             />
             <Bar 
               dataKey="count" 
-              fill="#38bdf8" 
+              fill="#0ea5e9" 
+              
             />
           </BarChart>
         </ResponsiveContainer>

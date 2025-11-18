@@ -1,15 +1,18 @@
-export function Num(v: number) {
+export function Num(v: number | string) {
+  const n = typeof v === "string" ? Number(v) : v
+  if (Number.isNaN(n)) return "-";
+
   return new Intl.NumberFormat("ko-KR", {
     maximumFractionDigits: 0,
-  }).format(v);
+  }).format(n);
 }
 
-export function Date(iso: string) {
+export function ReDate(iso: string) {
   return iso.replace("T", " ").slice(0, 16);
 }
 
 export function Badge({ status }: { status: string }) {
-  let color = "bg-slate-700 text-slate-100";
+  let color = "";
 
   if (status === "SUCCESS") color = "bg-emerald-500/20";
   else if (status === "FAILED") color = "bg-rose-500/20";

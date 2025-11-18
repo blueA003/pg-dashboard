@@ -11,7 +11,13 @@ import {
   Legend,
 } from "recharts";
 
-const PIE_COLORS = ["#60a5fa", "#4ade80", "#2dd4bf", "#a78bfa", "#f87171"];
+export const PIE_COLORS = [
+  "#3B82F6", // DEVICE
+  "#0EA5E9", // ONLINE
+  "#10B981", // MOBILE
+  "#F43F5E", // VACT
+  "#8B5CF6", // BILLING
+];
 
 type Props = { payments: Payment[] };
 
@@ -57,7 +63,13 @@ export function PChart({ payments }: Props) {
                 />
               ))}
             </Pie>
-            <Tooltip/>
+            <Tooltip
+                contentStyle={{
+                  borderColor: "#1e293b",
+                  borderRadius: 8,
+                  backgroundColor:"#CBD5E1",
+                }}
+            />
             <Legend />
           </PieChart>
         </ResponsiveContainer>

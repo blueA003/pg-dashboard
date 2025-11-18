@@ -4,8 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRecoilState } from "recoil";
 import { isSidebar } from "@/utils/recoil/atoms";
-import { HiMenu, HiX } from "react-icons/hi";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 type Item = {
@@ -30,7 +28,7 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        "flex h-screen flex-col border-r border-slate-800 bg-slate-900 text-slate-100 transition-all shrink-0",
+        "flex h-screen flex-col border-r border-slate-800 bg-slate-900 text-slate-100 shrink-0",
         open ? "w-64" : "w-16"
       )}
     >
@@ -71,7 +69,7 @@ export function Sidebar() {
         })}
       </nav>
        <div className="border-t border-slate-800 px-3 py-2 text-[11px] text-slate-500">
-        {open && <span>v1.0 • Brunch PG</span>}
+        {open && <span>v1.0 • PG DASHBOARD</span>}
       </div>
     </aside>
   );
