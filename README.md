@@ -6,7 +6,7 @@
 ## 설치 및 실행 방법
 1. 패키지 설치
   - npm install
-  - 
+
 2. 실행
   - npm run dev
 
@@ -91,6 +91,7 @@ NEXT_PUBLIC_API_BASE_URL=EX_API_BASE_URL
 
 
 ## 프로젝트 폴더 구조 (실제 구조 기반)
+```
 project-root/
 ├── app/
 │   ├── components/
@@ -143,7 +144,7 @@ project-root/
 ├── .env.local
 ├── package.json
 └── README.md
-
+```
 
 ## 개선 방향
 - 파이 차트의 포커스 효과를 완전히 제거하지 못해 일부 영역을 가리는 방식으로 처리한 점이 아쉽습니다.
