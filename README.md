@@ -90,6 +90,16 @@ NEXT_PUBLIC_API_BASE_URL=EX_API_BASE_URL
   - ESLint 8.57.0 + eslint-config-next
 
 
+## 요구사항 충족 여부
+- ✔ 첫 대시보드 화면 구현
+- ✔ 거래 내역 리스트 화면 구현
+- ✔ GET API 기반 데이터 사용 -
+- ✔ Node.js 20.x LTS 환경에서 정상 동작 확인
+- ✔ TypeScript 기반 프로젝트로 개발
+- ✔ UI 직접 디자인(Tailwind CSS 기반)
+- ✔ 환경 변수(.env.local)로 API Base URL 관리
+
+
 ## 프로젝트 폴더 구조 (실제 구조 기반)
 ```
 project-root/
